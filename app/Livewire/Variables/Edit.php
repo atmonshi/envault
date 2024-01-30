@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Variables;
+namespace App\Livewire\Variables;
 
 use App\Models\Variable;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -48,7 +48,7 @@ class Edit extends Component
 
         $this->openRollBack = false;
 
-        $this->emit('variable.version.restored');
+        $this->dispatch('variable.version.restored');
     }
 
     /**
@@ -58,7 +58,7 @@ class Edit extends Component
     {
         $this->openRollBack = ! $this->openRollBack;
 
-        $this->emit($this->openRollBack ? 'variable.roll-back.opened' : 'variable.roll-back.closed');
+        $this->dispatch($this->openRollBack ? 'variable.roll-back.opened' : 'variable.roll-back.closed');
     }
 
     /**
@@ -92,7 +92,7 @@ class Edit extends Component
 
         $this->variable->save();
 
-        $this->emit('variable.updated', $this->variable->id);
+        $this->dispatch('variable.updated', $this->variable->id);
 
         if ($this->variable->wasChanged('key')) {
             event(new \App\Events\Variables\KeyUpdatedEvent($this->variable->app, $this->variable, $oldKey, $this->variable->key));

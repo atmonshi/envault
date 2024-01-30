@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Apps;
+namespace App\Livewire\Apps;
 
 use App\Models\App;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

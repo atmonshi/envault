@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Apps\Edit;
+namespace App\Livewire\Apps\Edit;
 
 use App\Models\App;
 use App\Models\User;
@@ -48,7 +48,7 @@ class Collaborators extends Component
 
         $this->app->collaborators()->attach($this->userToAddId);
 
-        $this->emit('app.collaborator.added', $this->userToAddId, $this->app->id);
+        $this->dispatch('app.collaborator.added', $this->userToAddId, $this->app->id);
 
         event(new \App\Events\Apps\CollaboratorAddedEvent($this->app, $userToAdd));
 
@@ -88,7 +88,7 @@ class Collaborators extends Component
 
         $this->app->collaborators()->detach($id);
 
-        $this->emit('app.collaborator.removed', $id, $this->app->id);
+        $this->dispatch('app.collaborator.removed', $id, $this->app->id);
 
         event(new \App\Events\Apps\CollaboratorRemovedEvent($this->app, $userToRemove));
 
@@ -114,7 +114,7 @@ class Collaborators extends Component
             'role' => $role,
         ]);
 
-        $this->emit('app.collaborator.updated', $id, $this->app->id);
+        $this->dispatch('app.collaborator.updated', $id, $this->app->id);
 
         event(new \App\Events\Apps\CollaboratorRoleUpdatedEvent($this->app, $userToUpdate, $oldRole, $role));
 

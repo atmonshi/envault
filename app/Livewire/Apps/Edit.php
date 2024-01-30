@@ -1,17 +1,34 @@
 <?php
 
-namespace App\Http\Livewire\Apps;
+namespace App\Livewire\Apps;
 
 use App\Models\App;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 
-class Show extends Component
+class Edit extends Component
 {
     use AuthorizesRequests;
 
-    /** @var \App\Models\App */
+    /**
+     * @var \App\Models\App
+     */
     public $app;
+
+    /**
+     * @var array
+     */
+    protected $listeners = [
+        'app.updated' => 'update',
+    ];
+
+    /**
+     * @return void
+     */
+    public function update()
+    {
+        $this->app->refresh();
+    }
 
     /**
      * @param \App\Models\App $app
@@ -21,7 +38,7 @@ class Show extends Component
      */
     public function mount(App $app)
     {
-        $this->authorize('view', $app);
+        $this->authorize('update', $app);
 
         $this->app = $app;
     }
@@ -31,6 +48,6 @@ class Show extends Component
      */
     public function render()
     {
-        return view('apps.show');
+        return view('apps.edit');
     }
 }

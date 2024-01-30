@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Variables;
+namespace App\Livewire\Variables;
 
 use App\Models\App;
-use Livewire\Component;
 use App\Models\Variable;
-use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Str;
+use Livewire\Component;
 
 class Index extends Component
 {

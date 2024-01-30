@@ -30,7 +30,7 @@
                             wire:loading.class="opacity-75 cursor-wait"
                             class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium @if ($openRollBack) rounded-tr-md @else rounded-r-md @endif text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
                     >
-                        <x-heroicon-s-collection class="h-5 w-5 text-gray-400" />
+                        <x-heroicon-s-rectangle-stack class="h-5 w-5 text-gray-400" />
                     </button>
                 </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Variables;
+namespace App\Livewire\Variables;
 
 use App\Models\Variable;
 use App\Notifications\VariableDeletedNotification;
@@ -27,7 +27,7 @@ class Delete extends Component
 
         $this->variable->delete();
 
-        $this->emit('variable.deleted', $this->variable->id);
+        $this->dispatch('variable.deleted', $this->variable->id);
 
         event(new \App\Events\Variables\DeletedEvent($this->variable->app, $this->variable));
     }

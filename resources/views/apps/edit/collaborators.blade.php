@@ -79,7 +79,7 @@
                                                                 <div
                                                                     class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
                                                                 >
-                                                                    <x-heroicon-o-exclamation
+                                                                    <x-heroicon-o-exclamation-triangle
                                                                         class="h-6 w-6 text-red-600"
                                                                     />
                                                                 </div>
@@ -160,7 +160,7 @@
                                                                 <div
                                                                     class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
                                                                 >
-                                                                    <x-heroicon-o-exclamation
+                                                                    <x-heroicon-o-exclamation-triangle
                                                                         class="h-6 w-6 text-red-600"
                                                                     />
                                                                 </div>
@@ -239,7 +239,7 @@
                                                         <div
                                                             class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
                                                         >
-                                                            <x-heroicon-o-exclamation class="h-6 w-6 text-red-600" />
+                                                            <x-heroicon-o-exclamation-triangle class="h-6 w-6 text-red-600" />
                                                         </div>
                                                         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                                             <h3 class="text-lg leading-6 font-medium text-gray-900">
@@ -314,7 +314,7 @@
                             class="inline-flex shadow-sm items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
                     >
                         Add
-                        <x-heroicon-s-user-add class="ml-1.5 -mr-1 h-4 w-4" />
+                        <x-heroicon-s-user-plus class="ml-1.5 -mr-1 h-4 w-4" />
                     </button>
                 </span>
             </div>

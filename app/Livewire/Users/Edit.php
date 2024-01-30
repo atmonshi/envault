@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Users;
+namespace App\Livewire\Users;
 
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -65,7 +65,7 @@ class Edit extends Component
 
         $this->user->save();
 
-        $this->emit('user.updated', $this->user->id);
+        $this->dispatch('user.updated', $this->user->id);
 
         if ($this->user->wasChanged('email')) {
             event(new \App\Events\Users\EmailUpdatedEvent($this->user, $oldEmail, $this->user->email));

@@ -91,11 +91,11 @@
                                 x-bind:aria-label="open ? 'Close main menu' : 'Main menu'" x-bind:aria-expanded="open"
                         >
                             <span x-show="!open">
-                                <x-heroicon-s-menu class="w-6 h-6" />
+                                <x-heroicon-s-bars-3 class="w-6 h-6" />
                             </span>
 
                             <span x-show="open">
-                                <x-heroicon-s-x class="w-6 h-6" />
+                                <x-heroicon-s-x-mark class="w-6 h-6" />
                             </span>
                         </button>
                     </div>

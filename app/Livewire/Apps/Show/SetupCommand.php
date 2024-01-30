@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Apps\Show;
+namespace App\Livewire\Apps\Show;
 
 use App\Models\App;
 use App\Models\AppSetupToken;
@@ -58,7 +58,7 @@ class SetupCommand extends Component
             'user_id' => auth()->user()->id,
         ]);
 
-        $this->emit('app.setup-command.generated', $this->app->id);
+        $this->dispatch('app.setup-command.generated', $this->app->id);
     }
 
     /**

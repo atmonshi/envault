@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Variables\Edit;
+namespace App\Livewire\Variables\Edit;
 
 use App\Models\Variable;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -42,13 +42,13 @@ class RollBack extends Component
             $this->selectedVersionId = $id;
             $this->selectedVersionValue = $value;
 
-            $this->emit('variable.version.selected', $id);
+            $this->dispatch('variable.version.selected', $id);
         } else {
             $this->selectedVersionCreatedAt = null;
             $this->selectedVersionId = null;
             $this->selectedVersionValue = null;
 
-            $this->emit('variable.version.deselected');
+            $this->dispatch('variable.version.deselected');
         }
     }
 

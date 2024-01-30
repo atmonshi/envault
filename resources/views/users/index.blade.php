@@ -41,7 +41,7 @@
                                     <div class="mt-2">
                                         <div>
                                             <div class=" mr-6 flex items-center text-sm leading-5 text-gray-500">
-                                                <x-heroicon-s-mail class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" />
+                                                <x-heroicon-s-envelope class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" />
 
                                                 {{ $user->email }}
                                             </div>

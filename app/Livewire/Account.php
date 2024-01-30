@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
-use App\Models\User;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 
@@ -48,7 +47,7 @@ class Account extends Component
 
         $this->user->save();
 
-        $this->emit('account.updated');
+        $this->dispatch('account.updated');
 
         if ($this->user->wasChanged('email')) {
             event(new \App\Events\Users\EmailUpdatedEvent($this->user, $oldEmail, $this->user->email));

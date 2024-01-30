@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Variables;
+namespace App\Livewire\Variables;
 
 use App\Models\App;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -82,7 +81,7 @@ class Create extends Component
         });
 
         if ($totalImported) {
-            $this->emit('variables.imported', $totalImported);
+            $this->dispatch('variables.imported', $totalImported);
 
             event(new \App\Events\Variables\ImportedEvent($this->app, $totalImported));
         }
@@ -109,7 +108,7 @@ class Create extends Component
             'value' => $this->value,
         ]);
 
-        $this->emit('variable.created', $variable->id);
+        $this->dispatch('variable.created', $variable->id);
 
         event(new \App\Events\Variables\CreatedEvent($this->app, $variable));
 

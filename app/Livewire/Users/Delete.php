@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Users;
+namespace App\Livewire\Users;
 
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -26,7 +26,7 @@ class Delete extends Component
 
         $this->user->delete();
 
-        $this->emit('user.deleted', $this->user->id);
+        $this->dispatch('user.deleted', $this->user->id);
 
         event(new \App\Events\Users\DeletedEvent($this->user));
     }

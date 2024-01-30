@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Apps\Edit;
+namespace App\Livewire\Apps\Edit;
 
 use App\Models\App;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -31,7 +31,7 @@ class Details extends Component
 
         $this->app->delete();
 
-        $this->emit('app.deleted', $this->app->id);
+        $this->dispatch('app.deleted', $this->app->id);
 
         event(new \App\Events\Apps\DeletedEvent($this->app));
 
@@ -57,7 +57,7 @@ class Details extends Component
 
         $this->app->save();
 
-        $this->emit('app.updated', $this->app->id);
+        $this->dispatch('app.updated', $this->app->id);
 
         if ($this->app->wasChanged('name')) {
             event(new \App\Events\Apps\NameUpdatedEvent($this->app, $oldName, $this->app->name));

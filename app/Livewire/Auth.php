@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\User;
 use App\Notifications\AuthRequestedNotification;
@@ -47,7 +47,7 @@ class Auth extends Component
         $this->user->last_login_at = now();
         $this->user->save();
 
-        $this->emit('auth.confirmed');
+        $this->dispatch('auth.confirmed');
 
         event(new \App\Events\Users\SignedInEvent($this->user));
 
@@ -68,10 +68,10 @@ class Auth extends Component
 
         $this->user->notify(new AuthRequestedNotification($token));
 
-        $this->emit('auth.request.sent');
+        $this->dispatch('auth.request.sent');
 
         if ($resend) {
-            $this->emit('auth.request.resent');
+            $this->dispatch('auth.request.resent');
         }
     }
 
@@ -88,7 +88,7 @@ class Auth extends Component
 
         $this->processRequest();
 
-        $this->emit('auth.requested');
+        $this->dispatch('auth.requested');
     }
 
     /**

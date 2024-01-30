@@ -15,7 +15,7 @@
                         <div class="flex-shrink-0">
                             <div class="inline-flex relative rounded-md shadow-sm">
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <x-heroicon-s-search class="h-5 w-5 text-gray-400" />
+                                    <x-heroicon-s-magnifying-glass class="h-5 w-5 text-gray-400" />
                                 </div>
                                 <input wire:model.debounce.500ms="search" type="search"
                                        class="pl-10 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
@@ -38,7 +38,7 @@
                                                 class="text-sm leading-5 font-medium text-indigo-600 truncate"
                                             >{{ $app->name }}</div>
                                             <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
-                                                <x-heroicon-s-collection
+                                                <x-heroicon-s-rectangle-stack
                                                     class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
                                                 />
                                                 <span

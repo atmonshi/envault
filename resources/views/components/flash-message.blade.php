@@ -1,7 +1,7 @@
 @props(['event', 'message'])
 
 <div x-data="{ visible: false }"
-     x-init="window.livewire.on('{{ $event }}', () => {
+     x-init="$wire.on('{{ $event }}', () => {
             visible = true;
             setTimeout(() => { visible = false }, 5000);
         })"

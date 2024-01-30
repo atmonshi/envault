@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Users;
+namespace App\Livewire\Users;
 
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -49,7 +49,7 @@ class Create extends Component
             'last_name' => $this->lastName,
         ]);
 
-        $this->emit('user.created', $user->id);
+        $this->dispatch('user.created', $user->id);
 
         event(new \App\Events\Users\CreatedEvent($user));
 

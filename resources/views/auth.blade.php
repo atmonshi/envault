@@ -18,7 +18,7 @@
                     <button type="submit" wire:loading.class="opacity-75 cursor-wait"
                             class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                     >
-                        Continue
+                        Continue 1111
                     </button>
                 </span>
             </div>
@@ -26,7 +26,7 @@
     @else
         <form wire:submit.prevent="confirm" spellcheck="false">
             <div x-data="{ visible: false }"
-                 x-init="window.livewire.on('auth.request.resent', () => {
+                 x-init="$wire.on('auth.request.resent', () => {
                     visible = true;
                     setTimeout(() => { visible = false }, 5000);
                 })"
@@ -77,7 +77,7 @@
                     <button type="submit" wire:loading.class="opacity-75 cursor-wait"
                             class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                     >
-                        Continue
+                        Continue 222
                     </button>
                 </span>
             </div>

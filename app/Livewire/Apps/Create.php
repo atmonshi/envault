@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Apps;
+namespace App\Livewire\Apps;
 
 use App\Models\App;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -28,7 +28,7 @@ class Create extends Component
             'name' => ['required'],
         ]));
 
-        $this->emit('app.created', $app->id);
+        $this->dispatch('app.created', $app->id);
 
         event(new \App\Events\Apps\CreatedEvent($app));
 

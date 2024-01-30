@@ -12,7 +12,7 @@
                     <x-flash-message event="variable.created" message="Added!" />
 
                     <div x-data="{ createdCount: 0, visible: false }"
-                         x-init="window.livewire.on('variables.imported', (count) => {
+                         x-init="$wire.on('variables.imported', (count) => {
                                 createdCount = count;
                                 visible = true;
                                 setTimeout(() => { visible = false }, 5000);
@@ -117,7 +117,7 @@
                                             wire:loading.class="opacity-75 cursor-wait"
                                             class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                                     >
-                                        <x-heroicon-o-upload class="h-5 w-5" />
+                                        <x-heroicon-o-arrow-up-tray class="h-5 w-5" />
                                     </button>
 
                                     <input x-ref="importFileInput" wire:model="importFile" type="file" class="hidden"/>
