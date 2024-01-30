@@ -18,7 +18,7 @@ class SetupCommandTest extends TestCase
 
         Livewire::test('apps.show.setup-command', ['app' => $app])
             ->assertNotSet('token', null)
-            ->assertDispatched('app.setup-command.generated', $app->id);
+            ->assertDispatched('app.setup-command.generated', appId:$app->id);
 
         $this->assertDatabaseHas('app_setup_tokens', [
             'app_id' => $app->id,

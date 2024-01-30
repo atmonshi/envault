@@ -23,7 +23,7 @@ class EditTest extends TestCase
             ->set('lastName', $newDetails->last_name)
             ->set('role', 'admin')
             ->call('update')
-            ->assertDispatched('user.updated', $userToUpdate->id);
+            ->assertDispatched('user.updated', userId:$userToUpdate->id);
 
         $this->assertDatabaseHas('users', [
             'id' => $userToUpdate->id,

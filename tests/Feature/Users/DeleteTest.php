@@ -17,7 +17,7 @@ class DeleteTest extends TestCase
 
         Livewire::test('users.delete', ['user' => $userToDelete])
             ->call('destroy', $userToDelete->id)
-            ->assertDispatched('user.deleted', $userToDelete->id);
+            ->assertDispatched('user.deleted', userId:$userToDelete->id);
 
         $this->assertSoftDeleted('users', [
             'id' => $userToDelete->id,
