@@ -58,7 +58,7 @@ class SetupCommand extends Component
             'user_id' => auth()->user()->id,
         ]);
 
-        $this->dispatch('app.setup-command.generated', $this->app->id);
+        $this->dispatch('app.setup-command.generated', appId:$this->app->id);
     }
 
     /**

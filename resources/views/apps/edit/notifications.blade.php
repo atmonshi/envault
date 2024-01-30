@@ -1,5 +1,5 @@
 <div class="bg-white shadow overflow-hidden rounded-md">
-    <form wire:submit.prevent="update" spellcheck="false">
+    <form wire:submit="update" spellcheck="false">
         <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
             <div class="flex items-center justify-between flex-wrap sm:flex-no-wrap">
                 <div>
@@ -23,7 +23,7 @@
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                     <div class="rounded-md shadow-sm">
-                        <input wire:model.defer="slackNotificationWebhookUrl" id="webhookUrl" type="text"
+                        <input wire:model="slackNotificationWebhookUrl" id="webhookUrl" type="text"
                                placeholder="https://hooks.slack.com/services/..."
                                class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('slackNotificationWebhookUrl') border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500 @enderror"
                         />
@@ -46,7 +46,7 @@
                                 #
                             </span>
                         </div>
-                        <input wire:model.defer="slackNotificationChannel" id="channel" type="text" placeholder="general"
+                        <input wire:model="slackNotificationChannel" id="channel" type="text" placeholder="general"
                                class="pl-7 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md @error('slackNotificationChannel') border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500 @enderror"
                         />
                     </div>

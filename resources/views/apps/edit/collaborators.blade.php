@@ -297,7 +297,7 @@
             <div class="sm:flex sm:items-center">
                 <div class="w-full">
                     <div class="flex rounded-md shadow-sm">
-                        <select wire:model="userToAddId"
+                        <select wire:model.live="userToAddId"
                                 class="block border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md w-full py-2 px-3 py-0 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out text-sm sm:leading-5"
                         >
                             @foreach ($addableUsers as $collaborator)

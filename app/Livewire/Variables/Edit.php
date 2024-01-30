@@ -92,7 +92,7 @@ class Edit extends Component
 
         $this->variable->save();
 
-        $this->dispatch('variable.updated', $this->variable->id);
+        $this->dispatch('variable.updated', variableId:$this->variable->id);
 
         if ($this->variable->wasChanged('key')) {
             event(new \App\Events\Variables\KeyUpdatedEvent($this->variable->app, $this->variable, $oldKey, $this->variable->key));

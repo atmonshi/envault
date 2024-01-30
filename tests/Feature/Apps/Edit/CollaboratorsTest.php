@@ -21,7 +21,7 @@ class CollaboratorsTest extends TestCase
         Livewire::test('apps.edit.collaborators', ['app' => $app])
             ->set('userToAddId', $userToAdd->id)
             ->call('add')
-            ->assertEmitted('app.collaborator.added', $userToAdd->id, $app->id);
+            ->assertDispatched('app.collaborator.added', $userToAdd->id, $app->id);
 
         $this->assertDatabaseHas('app_collaborators', [
             'app_id' => $app->id,
@@ -40,7 +40,7 @@ class CollaboratorsTest extends TestCase
 
         Livewire::test('apps.edit.collaborators', ['app' => $app])
             ->call('remove', $userToRemove->id)
-            ->assertEmitted('app.collaborator.removed', $userToRemove->id, $app->id);
+            ->assertDispatched('app.collaborator.removed', $userToRemove->id, $app->id);
 
         $this->assertDeleted('app_collaborators', [
             'app_id' => $app->id,
@@ -70,7 +70,7 @@ class CollaboratorsTest extends TestCase
 
         Livewire::test('apps.edit.collaborators', ['app' => $app])
             ->call('updateRole', $collaboratorToUpdate->id, 'admin')
-            ->assertEmitted('app.collaborator.updated', $collaboratorToUpdate->id, $app->id);
+            ->assertDispatched('app.collaborator.updated', $collaboratorToUpdate->id, $app->id);
 
         $this->assertDatabaseHas('app_collaborators', [
             'app_id' => $app->id,

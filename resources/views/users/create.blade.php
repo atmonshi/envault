@@ -1,5 +1,5 @@
 <div class="bg-white shadow overflow-hidden rounded-md">
-    <form wire:submit.prevent="store" spellcheck="false">
+    <form wire:submit="store" spellcheck="false">
         <div class="bg-white px-4 py-5 sm:p-6 border-b border-gray-200">
             <div class="flex items-center justify-between flex-wrap sm:flex-no-wrap">
                 <div>

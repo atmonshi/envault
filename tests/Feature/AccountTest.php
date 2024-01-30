@@ -29,7 +29,7 @@ class AccountTest extends TestCase
             ->set('firstName', $newDetails->first_name)
             ->set('lastName', $newDetails->last_name)
             ->call('update')
-            ->assertEmitted('account.updated');
+            ->assertDispatched('account.updated');
 
         $this->assertDatabaseHas('users', [
             'id' => $this->authenticatedUser->id,

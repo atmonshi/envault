@@ -1,5 +1,5 @@
 <div class="bg-white rounded-lg overflow-hidden shadow-xl mx-auto">
-    <form wire:submit.prevent="update" spellcheck="false">
+    <form wire:submit="update" spellcheck="false">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div class="flex items-center justify-between flex-wrap sm:flex-no-wrap">
                 <div>

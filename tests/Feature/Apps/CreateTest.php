@@ -19,7 +19,7 @@ class CreateTest extends TestCase
         Livewire::test('apps.create')
             ->set('name', $appToCreate->name)
             ->call('store')
-            ->assertEmitted('app.created');
+            ->assertDispatched('app.created');
 
         $this->assertDatabaseHas('apps', [
             'name' => $appToCreate->name,

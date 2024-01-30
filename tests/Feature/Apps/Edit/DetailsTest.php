@@ -18,7 +18,7 @@ class DetailsTest extends TestCase
 
         Livewire::test('apps.edit.details', ['app' => $appToDelete])
             ->call('destroy')
-            ->assertEmitted('app.deleted', $appToDelete->id);
+            ->assertDispatched('app.deleted', $appToDelete->id);
 
         $this->assertSoftDeleted('apps', [
             'id' => $appToDelete->id,
@@ -35,7 +35,7 @@ class DetailsTest extends TestCase
         Livewire::test('apps.edit.details', ['app' => $appToUpdate])
             ->set('name', $newDetails->name)
             ->call('update')
-            ->assertEmitted('app.updated', $appToUpdate->id);
+            ->assertDispatched('app.updated', $appToUpdate->id);
 
         $this->assertDatabaseHas('apps', [
             'id' => $appToUpdate->id,

@@ -23,7 +23,7 @@ class AuthTest extends TestCase
             ->set('token', 'token')
             ->set('user', $user)
             ->call('confirm')
-            ->assertEmitted('auth.confirmed');
+            ->assertDispatched('auth.confirmed');
 
         $this->assertAuthenticatedAs($user);
     }
@@ -37,8 +37,8 @@ class AuthTest extends TestCase
             ->set('email', $user->email)
             ->call('request')
             ->assertSet('user.id', $user->id)
-            ->assertEmitted('auth.request.sent')
-            ->assertEmitted('auth.requested');
+            ->assertDispatched('auth.request.sent')
+            ->assertDispatched('auth.requested');
     }
 
     /** @test */
@@ -50,7 +50,7 @@ class AuthTest extends TestCase
             ->set('user', $user)
             ->call('processRequest')
             ->assertNotSet('request', null)
-            ->assertEmitted('auth.request.sent');
+            ->assertDispatched('auth.request.sent');
     }
 
     /** @test */

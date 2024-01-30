@@ -28,7 +28,7 @@ class CreateTest extends TestCase
             ->set('key', $variableToCreate->key)
             ->set('value', $variableVersionToCreate->value)
             ->call('store')
-            ->assertEmitted('variable.created')
+            ->assertDispatched('variable.created')
             ->assertSet('key', null)
             ->assertSet('value', null);
 
@@ -55,7 +55,7 @@ class CreateTest extends TestCase
         Livewire::test('variables.create', ['app' => $app])
             ->set('import', $variableToCreate->key.'='.$variableVersionToCreate->value)
             ->call('import')
-            ->assertEmitted('variables.imported')
+            ->assertDispatched('variables.imported')
             ->assertSet('key', null)
             ->assertSet('import', null);
 
@@ -82,7 +82,7 @@ class CreateTest extends TestCase
         Livewire::test('variables.create', ['app' => $app])
             ->set('import', $variableToCreate->key.' = '.$variableVersionToCreate->value)
             ->call('import')
-            ->assertEmitted('variables.imported')
+            ->assertDispatched('variables.imported')
             ->assertSet('key', null)
             ->assertSet('import', null);
 

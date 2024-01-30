@@ -28,7 +28,7 @@ class Create extends Component
             'name' => ['required'],
         ]));
 
-        $this->dispatch('app.created', $app->id);
+        $this->dispatch('app.created', appId:$app->id);
 
         event(new \App\Events\Apps\CreatedEvent($app));
 

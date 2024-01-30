@@ -1,5 +1,5 @@
 <div class="bg-white rounded-lg overflow-hidden shadow-xl mx-auto">
-    <form wire:submit.prevent="update" spellcheck="false">
+    <form wire:submit="update" spellcheck="false">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div class="flex items-center justify-between flex-wrap sm:flex-no-wrap">
                 <div>
@@ -21,7 +21,7 @@
             >
                 <div class="flex @if ($openRollBack) rounded-t-md @else rounded-md @endif shadow-sm">
                     <div class="relative flex-grow focus-within:z-10">
-                        <input wire:model.defer="value" id="valueEdit{{ $variable->id }}" type="text"
+                        <input wire:model="value" id="valueEdit{{ $variable->id }}" type="text"
                                class="font-mono rounded-none @if ($openRollBack) rounded-tl-md @else rounded-l-md @endif shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 @error('value') border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500 @enderror"
                         />
                     </div>

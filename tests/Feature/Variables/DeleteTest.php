@@ -21,7 +21,7 @@ class DeleteTest extends TestCase
 
         Livewire::test('variables.delete', ['variable' => $variableToDelete])
             ->call('destroy')
-            ->assertEmitted('variable.deleted');
+            ->assertDispatched('variable.deleted');
 
         $this->assertSoftDeleted('variables', [
             'id' => $variableToDelete->id,

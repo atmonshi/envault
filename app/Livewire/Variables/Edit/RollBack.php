@@ -42,7 +42,7 @@ class RollBack extends Component
             $this->selectedVersionId = $id;
             $this->selectedVersionValue = $value;
 
-            $this->dispatch('variable.version.selected', $id);
+            $this->dispatch('variable.version.selected', id:$id);
         } else {
             $this->selectedVersionCreatedAt = null;
             $this->selectedVersionId = null;

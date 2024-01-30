@@ -25,7 +25,7 @@ class RollBackTest extends TestCase
             ->assertSet('selectedVersionCreatedAt', 'createdAt')
             ->assertSet('selectedVersionId', 2)
             ->assertSet('selectedVersionValue', 'value')
-            ->assertEmitted('variable.version.selected');
+            ->assertDispatched('variable.version.selected');
 
         Livewire::test('variables.edit.roll-back', ['variable' => $variableToSelectVersionOf])
             ->set('selectedVersionId', 1)
@@ -33,7 +33,7 @@ class RollBackTest extends TestCase
             ->assertSet('selectedVersionCreatedAt', null)
             ->assertSet('selectedVersionId', null)
             ->assertSet('selectedVersionValue', null)
-            ->assertEmitted('variable.version.deselected');
+            ->assertDispatched('variable.version.deselected');
     }
 
     protected function setUp(): void

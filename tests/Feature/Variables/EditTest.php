@@ -28,7 +28,7 @@ class EditTest extends TestCase
             ->call('restoreVersion', $newVersionDetails->value)
             ->assertSet('value', $newVersionDetails->value)
             ->assertSet('openRollBack', false)
-            ->assertEmitted('variable.version.restored');
+            ->assertDispatched('variable.version.restored');
     }
 
     /** @test */
@@ -42,7 +42,7 @@ class EditTest extends TestCase
             ->set('openRollBack', false)
             ->call('toggleOpenRollBack')
             ->assertSet('openRollBack', true)
-            ->assertEmitted('variable.roll-back.opened');
+            ->assertDispatched('variable.roll-back.opened');
     }
 
     /** @test */
@@ -56,7 +56,7 @@ class EditTest extends TestCase
             ->set('openRollBack', true)
             ->call('toggleOpenRollBack')
             ->assertSet('openRollBack', false)
-            ->assertEmitted('variable.roll-back.closed');
+            ->assertDispatched('variable.roll-back.closed');
     }
 
     /** @test */
@@ -74,7 +74,7 @@ class EditTest extends TestCase
             ->set('key', $newVariableDetails->key)
             ->set('value', $newVariableVersionDetails->value)
             ->call('update')
-            ->assertEmitted('variable.updated');
+            ->assertDispatched('variable.updated');
 
         $this->assertDatabaseHas('variables', [
             'app_id' => $app->id,

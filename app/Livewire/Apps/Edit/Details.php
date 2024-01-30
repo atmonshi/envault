@@ -31,7 +31,7 @@ class Details extends Component
 
         $this->app->delete();
 
-        $this->dispatch('app.deleted', $this->app->id);
+        $this->dispatch('app.deleted', appId:$this->app->id);
 
         event(new \App\Events\Apps\DeletedEvent($this->app));
 
@@ -57,7 +57,7 @@ class Details extends Component
 
         $this->app->save();
 
-        $this->dispatch('app.updated', $this->app->id);
+        $this->dispatch('app.updated', appId:$this->app->id);
 
         if ($this->app->wasChanged('name')) {
             event(new \App\Events\Apps\NameUpdatedEvent($this->app, $oldName, $this->app->name));

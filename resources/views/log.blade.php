@@ -13,7 +13,7 @@
                 <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg">
                     <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6 sm:flex sm:items-center">
                         <div class="flex relative rounded-md shadow-sm sm:w-1/3">
-                            <select wire:model="action"
+                            <select wire:model.live="action"
                                     class="border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                             >
                                 <option value="">Select action...</option>
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="flex mt-2 sm:mt-0 sm:mx-2 relative rounded-md shadow-sm sm:w-1/3">
-                            <select wire:model="appId" @if (Str::before($this->action, '.') == 'user') disabled
+                            <select wire:model.live="appId" @if (Str::before($this->action, '.') == 'user') disabled
                                     @endif class="@if (Str::before($this->action, '.') == 'user') bg-gray-50 opacity-50 cursor-not-allowed @endif border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                             >
                                 <option value="">Select app...</option>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="flex mt-2 sm:mt-0 relative rounded-md shadow-sm sm:w-1/3">
-                            <select wire:model="userId"
+                            <select wire:model.live="userId"
                                     class="border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                             >
                                 <option value="">Select user responsible...</option>

@@ -81,7 +81,7 @@ class Create extends Component
         });
 
         if ($totalImported) {
-            $this->dispatch('variables.imported', $totalImported);
+            $this->dispatch('variables.imported', totalImported:$totalImported);
 
             event(new \App\Events\Variables\ImportedEvent($this->app, $totalImported));
         }
@@ -108,7 +108,7 @@ class Create extends Component
             'value' => $this->value,
         ]);
 
-        $this->dispatch('variable.created', $variable->id);
+        $this->dispatch('variable.created', variableId:$variable->id);
 
         event(new \App\Events\Variables\CreatedEvent($this->app, $variable));
 

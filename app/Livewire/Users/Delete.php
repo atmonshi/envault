@@ -26,7 +26,7 @@ class Delete extends Component
 
         $this->user->delete();
 
-        $this->dispatch('user.deleted', $this->user->id);
+        $this->dispatch('user.deleted', userId:$this->user->id);
 
         event(new \App\Events\Users\DeletedEvent($this->user));
     }

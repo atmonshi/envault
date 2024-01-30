@@ -48,7 +48,7 @@ class Collaborators extends Component
 
         $this->app->collaborators()->attach($this->userToAddId);
 
-        $this->dispatch('app.collaborator.added', $this->userToAddId, $this->app->id);
+        $this->dispatch('app.collaborator.added', userToAddId:$this->userToAddId, appId:$this->app->id);
 
         event(new \App\Events\Apps\CollaboratorAddedEvent($this->app, $userToAdd));
 
@@ -88,7 +88,7 @@ class Collaborators extends Component
 
         $this->app->collaborators()->detach($id);
 
-        $this->dispatch('app.collaborator.removed', $id, $this->app->id);
+        $this->dispatch('app.collaborator.removed', id:$id, appId:$this->app->id);
 
         event(new \App\Events\Apps\CollaboratorRemovedEvent($this->app, $userToRemove));
 
@@ -114,7 +114,7 @@ class Collaborators extends Component
             'role' => $role,
         ]);
 
-        $this->dispatch('app.collaborator.updated', $id, $this->app->id);
+        $this->dispatch('app.collaborator.updated', id:$id, appId:$this->app->id);
 
         event(new \App\Events\Apps\CollaboratorRoleUpdatedEvent($this->app, $userToUpdate, $oldRole, $role));
 

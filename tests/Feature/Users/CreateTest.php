@@ -20,7 +20,7 @@ class CreateTest extends TestCase
             ->set('firstName', $userToCreate->first_name)
             ->set('lastName', $userToCreate->last_name)
             ->call('store')
-            ->assertEmitted('user.created')
+            ->assertDispatched('user.created')
             ->assertSet('email', '')
             ->assertSet('firstName', '')
             ->assertSet('lastName', '');

@@ -49,7 +49,7 @@ class Create extends Component
             'last_name' => $this->lastName,
         ]);
 
-        $this->dispatch('user.created', $user->id);
+        $this->dispatch('user.created', userId:$user->id);
 
         event(new \App\Events\Users\CreatedEvent($user));
 

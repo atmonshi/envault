@@ -48,17 +48,17 @@ class Notifications extends Component
 
         if ($this->app->wasChanged(['slack_notification_channel', 'slack_notification_webhook_url'])) {
             if ($this->app->notificationsEnabled()) {
-                $this->dispatch('app.notifications.set-up', $this->app->id);
+                $this->dispatch('app.notifications.set-up', appId:$this->app->id);
 
                 event(new \App\Events\Apps\NotificationsSetUpEvent($this->app));
             } else {
-                $this->dispatch('app.notifications.updated', $this->app->id);
+                $this->dispatch('app.notifications.updated', appId:$this->app->id);
 
                 event(new \App\Events\Apps\NotificationSettingsUpdatedEvent($this->app));
             }
         } else {
             // Configuration changes have not been made
-            $this->dispatch('app.notifications.updated', $this->app->id);
+            $this->dispatch('app.notifications.updated', appId:$this->app->id);
         }
 
         $this->mount($this->app->refresh());

@@ -65,7 +65,7 @@ class Edit extends Component
 
         $this->user->save();
 
-        $this->dispatch('user.updated', $this->user->id);
+        $this->dispatch('user.updated', userId:$this->user->id);
 
         if ($this->user->wasChanged('email')) {
             event(new \App\Events\Users\EmailUpdatedEvent($this->user, $oldEmail, $this->user->email));

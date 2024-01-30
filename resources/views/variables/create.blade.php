@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <form wire:submit.prevent="store" spellcheck="false">
+        <form wire:submit="store" spellcheck="false">
             <div class="px-4 py-6 sm:px-6">
                 <x-inputs.text label="Key" name="key" placeholder="MAIL_USERNAME" font="font-mono"
                                maxWidth="max-w-lg"
@@ -83,7 +83,7 @@
                                     </h3>
 
                                     <div class="mt-3 rounded-md shadow-sm">
-                                        <textarea wire:model.defer="import" rows="20"
+                                        <textarea wire:model="import" rows="20"
                                                   placeholder="API_KEY=iRRMCOsMpNwpSWBi"
                                                   class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md transition duration-150 ease-in-out sm:leading-5 font-mono"
                                         ></textarea>
@@ -120,7 +120,7 @@
                                         <x-heroicon-o-arrow-up-tray class="h-5 w-5" />
                                     </button>
 
-                                    <input x-ref="importFileInput" wire:model="importFile" type="file" class="hidden"/>
+                                    <input x-ref="importFileInput" wire:model.live="importFile" type="file" class="hidden"/>
                                 </span>
                             </div>
                         </div>

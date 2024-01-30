@@ -27,7 +27,7 @@ class Delete extends Component
 
         $this->variable->delete();
 
-        $this->dispatch('variable.deleted', $this->variable->id);
+        $this->dispatch('variable.deleted', variableId:$this->variable->id);
 
         event(new \App\Events\Variables\DeletedEvent($this->variable->app, $this->variable));
     }
